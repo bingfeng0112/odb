@@ -36,7 +36,7 @@ public class test_GridView_lvtulushu {
 		tac.tap(page.odb_GridView_lvtu_xiangjikuaimen()).perform();
 		HolmosBaseUtils.sleep(2000);
 		//拉取storage/sdcard0/Android/data/com.tian.obd.android/files/image下的文件信息
-		String imagename =	adb.getImagename();
+		String imagename = adb.getImagename();
 		//判断是否正确获取图片名称
 		if(!imagename.isEmpty()){
 				
