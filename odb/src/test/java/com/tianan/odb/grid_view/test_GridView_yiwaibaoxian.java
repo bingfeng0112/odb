@@ -25,7 +25,7 @@ public class test_GridView_yiwaibaoxian {
 		//调用ConfigurationAndroid预制方法
 		con.SetUp();
 		//进行登录
-		login.login(con.driver);
+		login.login(ConfigurationAndroid.driver);
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
 		HolmosBaseUtils.sleep(2000);
