@@ -25,7 +25,7 @@ public class test_GridView_lvtulushu {
 		adb.deleteImage();
 		//调用ConfigurationAndroid预制方法
 		con.SetUp();
-		//进行登录
+		//调用登录方法，传driver
 		login.login(ConfigurationAndroid.driver);
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
