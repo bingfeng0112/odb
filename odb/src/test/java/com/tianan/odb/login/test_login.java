@@ -23,13 +23,6 @@ public class test_login {
 			//判断是否已经进行了登录
 		if(pages.odb_titlename().getText().equals("发现")){
 			//点击导航栏→我的
-			try{
-			AndroidElement aElement =ConfigurationAndroid.driver.findElement(By.id("com.tian.obd.android:id/share_rd_btn"));
-			aElement.click();
-			System.out.println(aElement.getText());
-			} catch (NoSuchElementException e) {
-				System.out.println("NoSuchElementException");
-			}
 			pages.odb_guide_Mine().click();
 			HolmosBaseUtils.sleep(2000);
 			//向上滑动200个像素（为了让退出按钮显示出来）
