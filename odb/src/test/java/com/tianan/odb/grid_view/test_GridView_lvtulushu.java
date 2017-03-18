@@ -9,6 +9,7 @@ import com.holmos.webtest.utils.HolmosBaseUtils;
 import com.tianan.odb.android_pages.CreateActivityPages;
 import com.tianan.odb.configuration_adb.adbDevice;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
+import com.tianan.odb.public_infunction.TouchActionUtils;
 import com.tianan.odb.public_infunction.login_success;
 
 import io.appium.java_client.TouchAction;
@@ -25,15 +26,14 @@ public class test_GridView_lvtulushu {
 		//调用ConfigurationAndroid预制方法
 		con.SetUp();
 		//进行登录
-		login.login(con.driver);
-		//使用appium下的TouchAction类中的，TouchAction方法，需要传driver
-		TouchAction tac = new TouchAction(con.driver);
-		HolmosBaseUtils.sleep(2000);
+		login.login(ConfigurationAndroid.driver);
+		//调取点击方法
+		TouchActionUtils tau = new TouchActionUtils();
 		//点击旅途路书
-		tac.tap(page.odb_GridView_lvtu()).perform();
+		tau.tap(page.odb_GridView_lvtu());
 		HolmosBaseUtils.sleep(2000);
 		//点击相机快门
-		tac.tap(page.odb_GridView_lvtu_xiangjikuaimen()).perform();
+		tau.tap(page.odb_GridView_lvtu_xiangjikuaimen());
 		HolmosBaseUtils.sleep(2000);
 		//拉取storage/sdcard0/Android/data/com.tian.obd.android/files/image下的文件信息
 		String imagename = adb.getImagename();
