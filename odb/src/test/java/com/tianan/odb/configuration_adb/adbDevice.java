@@ -1,14 +1,10 @@
 package com.tianan.odb.configuration_adb;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
-
-
 public class adbDevice {
-
 	public void AdbDevice() {
 		ShellUtils.cmd("wait-for-device");
 	}
@@ -21,13 +17,10 @@ public class adbDevice {
 	public List<String> AdbDeviceUid() {
 		Process ps = ShellUtils.cmd("devices");
 		List<String> DeviceUid = ShellUtils.getDevices(ps);
-      
 //        System.out.println(DeviceUid.get(0));
 //        System.out.println(DeviceUid.get(1));
-        
 		return DeviceUid;
 	}
-	
 	/**
 	 * 获取设备的id号
 	 * 
@@ -47,30 +40,18 @@ public class adbDevice {
 	public String getAndroidVersion() {
 		Process ps = ShellUtils.shell("getprop ro.build.version.release");
 		String androidVersion = ShellUtils.getShellOut(ps);
-
 		return androidVersion;
 	}
 	//删除/storage/sdcard0/Android/data/com.tian.obd.android/files/image下的文件
 	public void deleteImage(){
-		
 		ShellUtils.shell("rm -f  /storage/sdcard0/Android/data/com.tian.obd.android/files/image/*");
-		
 	}
 	//获取/storage/sdcard0/Android/data/com.tian.obd.android/files/image下的文件
 	public String getImagename(){
-		
 		Process ps = 	ShellUtils.shell("ls  /storage/sdcard0/Android/data/com.tian.obd.android/files/image/");
-		
 		String imagename = ShellUtils.getShellOut(ps);
-		
 		return imagename;
-		
-		
-		
-		
-		
 	}
-	
 	/**
 	 * 获取设备中Android的版本号，如4.4.2
 	 * 
@@ -79,7 +60,6 @@ public class adbDevice {
 	public String getAndroidModel() {
 		Process ps = ShellUtils.shell("getprop ro.product.model");
 		String androidModel = ShellUtils.getShellOut(ps);
-
 		return androidModel;
 	}
 	/**
@@ -90,7 +70,6 @@ public class adbDevice {
 	public int getSdkVersion() {
 		Process ps = ShellUtils.shell("getprop ro.build.version.sdk");
 		String sdkVersion = ShellUtils.getShellOut(ps);
-
 		return new Integer(sdkVersion);
 	}
 	/**
@@ -102,7 +81,6 @@ public class adbDevice {
 	public void removeApp(String packageName) {
 		ShellUtils.getShellOut(ShellUtils.cmd("uninstall " + packageName));
 	}
-
 	/**
 	 * 清除应用的用户数据
 	 * 
@@ -127,7 +105,6 @@ public class adbDevice {
 		Process ps = ShellUtils.shell("pm list packages -s");
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = ShellUtils.shellOut(ps);
-
 		String line;
 		try {
 			while ((line = br.readLine()) != null) {
@@ -136,20 +113,16 @@ public class adbDevice {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		try {
 			br.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		Pattern pattern = Pattern.compile(("[a-z]+:[a-zA-Z0-9.]+"));
 		ArrayList<String> result = ReUtils.matchString(pattern, sb.toString());
-
 		for (String string : result) {
 			sysApp.add(string.split(":")[1]);
 		}
-
 		return sysApp;
 	}
 	/**
@@ -162,7 +135,6 @@ public class adbDevice {
 		Process ps = ShellUtils.shell("pm list packages -3");
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = ShellUtils.shellOut(ps);
-
 		String line;
 		try {
 			while ((line = br.readLine()) != null) {
@@ -171,20 +143,16 @@ public class adbDevice {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		try {
 			br.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 		Pattern pattern = Pattern.compile(("[a-z]+:[a-zA-Z0-9.]+"));
 		ArrayList<String> result = ReUtils.matchString(pattern, sb.toString());
-
 		for (String string : result) {
 			thirdApp.add(string.split(":")[1]);
 		}
-
 		return thirdApp;
 	}
 	/**
@@ -209,19 +177,12 @@ public class adbDevice {
 	 * @return 返回package/activity
 	 */
 	public String getFocusedPackageAndActivity() {
-		
 		Process ps = ShellUtils.shell("dumpsys activity | grep mResumedActivity");
-		
 		Pattern pattern = Pattern.compile("([a-zA-Z0-9.]+/.[a-zA-Z0-9.]+)");
-		
 		ArrayList<String> component = ReUtils.matchString(pattern,ShellUtils.getShellOut(ps));
-		
-		
 //		System.out.println("包名"+component);
-		
 		return component.get(0);
 	}
-		
 //		//name=com.ruijie.anan.bizlayer/com.ruijie.anan.ui.im.IMContainner
 //		Pattern pattern = Pattern.compile("^([a-zA-Z0-9])*[\\.][\\s\\S]*([a-zA-Z0-9])*$");
 //		System.out.println(pattern);
@@ -242,9 +203,7 @@ public class adbDevice {
 ////									.shell("dumpsys window w | grep \\/ | grep name=")))
 ////					.get(0);
 ////		}
-
 //		return component.get(0);
-
 	/**
 	 * 获取设备上当前界面的activity
 	 * 
@@ -253,7 +212,6 @@ public class adbDevice {
 	public String getCurrentActivity() {
 		return getFocusedPackageAndActivity().split("/")[1];
 	}
-	
 	/**
 	 * 获取设备屏幕的分辨率
 	 * 
@@ -265,9 +223,7 @@ public class adbDevice {
 				.shell("dumpsys display | grep PhysicalDisplayInfo");
 		ArrayList<Integer> out = ReUtils.matchInteger(pattern,
 				ShellUtils.getShellOut(ps));
-
 		int[] resolution = new int[] { out.get(0), out.get(1) };
-
 		return resolution;
 	}
 	/**
@@ -278,50 +234,42 @@ public class adbDevice {
 	private double[] ratio(double x, double y) {
 		int[] display = getScreenResolution();
 		double[] coords = new double[2];
-
 		if (x < 1) {
 			coords[0] = display[0] * x;
 		} else {
 			coords[0] = x;
 		}
-
 		if (y < 1) {
 			coords[1] = display[1] * y;
 		} else {
 			coords[1] = y;
 		}
-
 		return coords;
 	}
 	private double[] ratio(double startX, double startY, double endX,
 			double endY) {
 		int[] display = getScreenResolution();
 		double[] coords = new double[4];
-
 		if (startX < 1) {
 			coords[0] = display[0] * startX;
 		} else {
 			coords[0] = startX;
 		}
-
 		if (startY < 1) {
 			coords[1] = display[1] * startY;
 		} else {
 			coords[1] = startY;
 		}
-
 		if (endX < 1) {
 			coords[2] = display[0] * endX;
 		} else {
 			coords[2] = endX;
 		}
-
 		if (endY < 1) {
 			coords[3] = display[1] * endY;
 		} else {
 			coords[3] = endY;
 		}
-
 		return coords;
 	}
 	/**
@@ -348,38 +296,32 @@ public class adbDevice {
 			ShellUtils.shell("input swipe " + coords[0] + " " + coords[1] + " "
 					+ coords[2] + " " + coords[3] + " " + ms);
 		}
-
 		sleep(500);
 	}
-	
 	/**
 	 * 左滑屏幕
 	 */
 	public void swipeToLeft() {
 		swipe(0.8, 0.5, 0.2, 0.5, 500);
 	}
-
 	/**
 	 * 右滑屏幕
 	 */
 	public void swipeToRight() {
 		swipe(700, 1109, 10, 1140, 500);
 	}
-	
 	/**
 	 * 上滑屏幕
 	 */
 	public void swipeToUp() {
 		swipe(0.5, 0.7, 0.5, 0.3, 500);
 	}
-
 	/**
 	 * 下滑屏幕
 	 */
 	public void swipeToDown() {
 		swipe(0.5, 0.3, 0.5, 0.7, 500);
 	}
-	
 	/**
 	 * 获取设备上当前界面的包名
 	 * 
@@ -388,8 +330,6 @@ public class adbDevice {
 	public String getCurrentPackageName() {
 		return getFocusedPackageAndActivity().split("/")[0];
 	}
-
-	
 	/**
 	 * 退出当前应用
 	 * 
@@ -397,7 +337,6 @@ public class adbDevice {
 	public void quitCurrentApp() {
 		ShellUtils.shell("am force-stop " + getCurrentPackageName());
 	}
-	
 	/**
 	 * 等待时间
 	 */
