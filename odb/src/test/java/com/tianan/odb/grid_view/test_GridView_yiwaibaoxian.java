@@ -9,9 +9,8 @@ import com.holmos.webtest.log.MyLogger;
 import com.holmos.webtest.utils.HolmosBaseUtils;
 import com.tianan.odb.android_pages.CreateActivityPages;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
+import com.tianan.odb.public_infunction.TouchActionUtils;
 import com.tianan.odb.public_infunction.login_success;
-
-import io.appium.java_client.TouchAction;
 
 public class test_GridView_yiwaibaoxian {
 	
@@ -27,11 +26,11 @@ public class test_GridView_yiwaibaoxian {
 		con.SetUp();
 		//进行登录
 		login.login(con.driver);
-		//使用appium下的TouchAction类中的，TouchAction方法，需要传driver
-		TouchAction tac = new TouchAction(con.driver);
+		//调取点击方法
+		TouchActionUtils tau = new TouchActionUtils();
 		HolmosBaseUtils.sleep(2000);
 		//点击天天福利
-		tac.tap(page.odb_GridView_yiwaibaoxian()).perform();
+		tau.tap(page.odb_GridView_yiwaibaoxian());
 		HolmosBaseUtils.sleep(7000);
 		//获取天天福利页面xml
 		String xmls =con.driver.getPageSource();
@@ -44,7 +43,7 @@ public class test_GridView_yiwaibaoxian {
 		else{
 			
 			logger.error("意外保险存在问题，请检查！");
-			con.driver.quit();
+			ConfigurationAndroid.driver.quit();
 			throw new NoSuchElementException();
 		}
 		
