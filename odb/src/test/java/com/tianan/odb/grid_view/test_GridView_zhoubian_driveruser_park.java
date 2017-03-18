@@ -34,6 +34,7 @@ public class test_GridView_zhoubian_driveruser_park {
 		tac.tap(page.odb_GridView_zhoubian_park()).perform();
 		HolmosBaseUtils.sleep(2000);
 		//点击查看
+		tac = new TouchAction(con.driver);
 		tac.tap(page.odb_GridView_zhoubian_park_check()).perform();
 		HolmosBaseUtils.sleep(2000);
 		//校验是否已进入停车场详情页面(执行脚本时，需要在硅谷亮城办公室)
