@@ -1,23 +1,19 @@
 package com.tianan.odb.configuration_device;
 
-import io.appium.java_client.AppiumDriver;
-import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.android.AndroidElement;
-
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
+import com.holmos.webtest.log.MyLogger;
 import com.tianan.odb.configuration_adb.adbDevice;
 
-import com.holmos.webtest.EngineType;
-import com.holmos.webtest.log.MyLogger;
-import com.holmos.webtest.utils.HolmosWindow;
+import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.android.AndroidElement;
 
 public class ConfigurationAndroid {
 
@@ -54,7 +50,7 @@ public class ConfigurationAndroid {
 			logger.info("未安装指定app，进行安装app操作");
 			
 			File appDir = new File("apps/app");
-			File app = new File(appDir, "HiWay_1.2.5_release.apk");	//测试app名称
+			File app = new File(appDir, "HiWay_1.2.6_release.apk");	//测试app名称
 			capabilities.setCapability("app", app.getAbsolutePath());//安装包的绝对路径设置
 		}
 		capabilities.setCapability("appPackage", "com.tian.obd.android"); //设置测试app包名
@@ -65,7 +61,8 @@ public class ConfigurationAndroid {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		//System.out.println(driver);
+		System.out.println(driver);
+		logger.info("app启动成功！");
 		// 设置超时
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
