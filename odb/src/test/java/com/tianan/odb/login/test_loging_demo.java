@@ -11,7 +11,7 @@ public class test_loging_demo {
 	ConfigurationAndroid con = new ConfigurationAndroid();
 	con.SetUp();
 	login_success lSuccess = new login_success();
-	lSuccess.login();
+	lSuccess.login(3);
   }
   @AfterTest
   public void tearDown(){
