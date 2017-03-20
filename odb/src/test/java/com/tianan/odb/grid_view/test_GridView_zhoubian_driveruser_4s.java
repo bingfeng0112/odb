@@ -23,6 +23,9 @@ public class test_GridView_zhoubian_driveruser_4s {
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
 		HolmosBaseUtils.sleep(2000);
+		//点击发现
+		tau.tap(page.odb_guide_finder());
+		HolmosBaseUtils.sleep(2000);
 		//点击周边出行
 		tau.tap(page.odb_GridView_zhoubian());
 		HolmosBaseUtils.sleep(2000);

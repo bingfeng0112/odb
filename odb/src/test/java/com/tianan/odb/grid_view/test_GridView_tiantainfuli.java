@@ -28,6 +28,9 @@ public class test_GridView_tiantainfuli {
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
 		HolmosBaseUtils.sleep(2000);
+		//点击发现
+		tau.tap(page.odb_guide_finder());
+		HolmosBaseUtils.sleep(2000);
 		//点击天天福利
 		tau.tap(page.odb_GridView_tiantianfuli());
 		HolmosBaseUtils.sleep(7000);
