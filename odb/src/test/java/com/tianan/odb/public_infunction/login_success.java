@@ -117,7 +117,7 @@ public class login_success {
 	androidswipe.swipeToUp(200);
 	HolmosBaseUtils.sleep(2000);
 	// 点击退出按钮
-	mine.MineQuitBtn().click();
+	mine.odbMineQuitBtn().click();
 	HolmosBaseUtils.sleep(2000);
   }
 }

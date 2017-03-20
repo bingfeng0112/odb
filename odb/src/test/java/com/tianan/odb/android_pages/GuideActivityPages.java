@@ -9,6 +9,13 @@ import com.tianan.odb.configuration_device.ConfigurationAndroid;
  */
 public class GuideActivityPages {
   /**
+   * @author 张豆豆
+   * @return 标题栏
+   */
+  public WebElement odbTitleBar() {
+	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/title_text");
+  }
+  /**
    * 
    * @author 张豆豆
    * @return 菜单 车信息
