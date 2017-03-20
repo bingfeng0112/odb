@@ -67,6 +67,12 @@ public class CarinfoActivityPages {
 	return carinfo_kuso_serarch_location_Issued_yes;
 	
     }
+    //获取途虎商城位置
+    public WebElement odb_carinfo_tuhu() {
+	
+	WebElement carinfo_tuhu=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_c3_2");
+	return	carinfo_tuhu;
+    }
     
     
     
