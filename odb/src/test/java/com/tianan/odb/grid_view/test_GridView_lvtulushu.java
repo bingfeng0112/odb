@@ -25,8 +25,8 @@ public class test_GridView_lvtulushu {
 		adb.deleteImage();
 		//调用ConfigurationAndroid预制方法
 		con.SetUp();
-		//调用登录方法，传driver
-		login.login(ConfigurationAndroid.driver);
+		//调用登录方法，传driver[传int3指的是第一次安装时，有4页欢迎页，需要滑动3次
+		login.login(3);
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
 		//点击旅途路书

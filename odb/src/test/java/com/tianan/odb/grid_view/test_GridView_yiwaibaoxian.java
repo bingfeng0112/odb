@@ -24,8 +24,8 @@ public class test_GridView_yiwaibaoxian {
 		login_success login = new login_success();
 		//调用ConfigurationAndroid预制方法
 		con.SetUp();
-		//进行登录
-		login.login(ConfigurationAndroid.driver);
+		//调用登录方法，传driver[传int3指的是第一次安装时，有4页欢迎页，需要滑动3次
+		login.login(3);
 		//调取点击方法
 		TouchActionUtils tau = new TouchActionUtils();
 		HolmosBaseUtils.sleep(2000);
