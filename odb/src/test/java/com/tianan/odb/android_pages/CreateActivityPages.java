@@ -1,5 +1,6 @@
 package com.tianan.odb.android_pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
@@ -122,5 +123,9 @@ public class CreateActivityPages {
 		
 		return GridView_zhoubian_gas_check_name;
 		
+	}
+	public WebElement odb_canale() {
+	  WebElement canle = ConfigurationAndroid.driver.findElement(By.id("com.tian.obd.android:id/sdl__negative_button"));
+	  return canle;
 	}
 }
