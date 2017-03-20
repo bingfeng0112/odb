@@ -22,6 +22,15 @@ public class Androidswipe {
         driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, during);
         // wait for page loading
     }
+    /**
+     * 向上滑动，从10分之9的位置滑动到10分之一的位置
+     * @author 张豆豆
+     * @param during
+     */
+    public void swipeToUp(int during){
+      int[] size = windowSize();
+      ConfigurationAndroid.driver.swipe(size[0] / 2, size[1] * 9 / 10, size[0] / 2, size[1] / 10, during);
+    }
     
     /**
      * This Method for swipe down  向下滑动
@@ -36,9 +45,14 @@ public class Androidswipe {
         driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, during);
         // wait for page loading
     }
-    
+    /**
+     * 向下滑动 9/10
+     * @author 张豆豆
+     * @param during 滑动时间
+     */
     public void swipeToDown(int during){
-      
+      int[] size = windowSize();
+      ConfigurationAndroid.driver.swipe(size[0] / 2, size[1] /10, size[0] / 2, size[1] * 9 / 10, during);
     }
     
     
@@ -55,10 +69,14 @@ public class Androidswipe {
         driver.swipe(width * 3 / 4, height / 2, width / 4, height / 2, during);
         // wait for page loading
     }
-    
+    /**
+     * 向左滑动 9/10
+     * @author 张豆豆
+     * @param during
+     */
     public void swipeToLeft(int during){
-      int size[] = windowSize();
-      ConfigurationAndroid.driver.swipe(size[0] * 9 / 10, size[1] / 2, size[0] / 10, size[1] / 2, during);
+      int[] size = windowSize();
+      ConfigurationAndroid.driver.swipe(size[0] * 9 / 10, size[1] / 2, size[0] * 1 / 10, size[1] / 2, during);
     }
 	
     
@@ -74,6 +92,29 @@ public class Androidswipe {
         int height = driver.manage().window().getSize().height;
         driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, during);
         // wait for page loading 
+    }
+    /**
+     * 向右滑动 9/10
+     * @author 张豆豆
+     * @param during 滑动时间
+     */
+    public void swipeToRight(int during){
+      int[] size = windowSize();
+      ConfigurationAndroid.driver.swipe(size[0] / 10, size[1] / 2, size[0] * 9 / 10, size[1] / 2, during);
+    }
+
+    /**
+     * 自定义滑动范围，
+     * 示例 customSwipe(9, 1, 10, 500)表示从10分之9滑到10分之一的位置
+     * @author 张豆豆
+     * @param x 分子（开始位置）
+     * @param y 分子（结束位置）
+     * @param z 分母
+     * @param during 滑动时间
+     */
+    public void customSwipe(int x, int y, int z,int during){
+      int size[] = windowSize();
+      ConfigurationAndroid.driver.swipe(size[0] * x / z, size[1] / 2, size[0] * y / z, size[1] / 2, during);
     }
     
     public int[] windowSize(){

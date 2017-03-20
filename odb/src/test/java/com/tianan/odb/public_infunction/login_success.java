@@ -5,7 +5,6 @@ import com.holmos.webtest.log.MyLogger;
 import com.holmos.webtest.utils.HolmosBaseUtils;
 import com.tianan.odb.android_pages.CreateActivityPages;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 public class login_success {
@@ -34,38 +33,44 @@ public class login_success {
 			return login_driver;
 		}
 	}
-	
-	public void login(){
-	  System.out.println("开始判断登录效果");
+	/**
+	 * 登录功能，取消升级、滑动欢迎页面，登录app
+	 * @author 张豆豆
+	 * @param num 滑动次数
+	 */
+	public void login(int num){
+	  CreateActivityPages pages = new CreateActivityPages();
+	  //判断是否有升级
+	  try{
+		WebElement canle = pages.odb_canale();
+		canle.click();
+		getTitle(num);
+	  } catch (NoSuchElementException e) {
+		getTitle(num);
+	  }
+	}
+	public void getTitle(int num){
 	  CreateActivityPages pages = new CreateActivityPages();
 	  //判断是否登陆成功，如果登录成功饭回true；否则返回false
 	  try {
 		WebElement title = pages.odb_titlename();
 		if(title.getText().equals("登录")){
 		  //开始登陆
-		  System.out.println("直接登录");
 		  loginApp();
-		} else {
-		  //退出后登陆
-		  System.out.println("已登录");
+		}else{
+		  System.out.println("app已登录");
 		}
 	  } catch (NoSuchElementException e) {
-		System.out.println("滑动屏幕");
-		  Androidswipe androidswipe = new Androidswipe();
-		  androidswipe.swipeToLeft(1000);
+		Androidswipe androidswipe = new Androidswipe();
+		for(int i = 0; i < num; i++){
+		  androidswipe.customSwipe(9, 1, 10,1000);
 		  HolmosBaseUtils.sleep(1000);
-		  androidswipe.swipeToLeft(1000);
-		  HolmosBaseUtils.sleep(1000);
-		  androidswipe.swipeToLeft(1000);
-		  HolmosBaseUtils.sleep(1000);
-		  ConfigurationAndroid.driver.tap(1, 500, 500, 500);
-		  loginApp();
-		
+		}
+		ConfigurationAndroid.driver.tap(1, 500, 500, 500);
+		loginApp();
 	  }
 	}
-	
 	public void loginApp(){
-	  System.out.println("开始输入登录信息");
 	  //开始登陆系统
 	  pages.odb_login_usernametxt().sendKeys("18618192101");
 	  HolmosBaseUtils.sleep(1000);
@@ -73,9 +78,17 @@ public class login_success {
 	  HolmosBaseUtils.sleep(1000);
 	  pages.odb_login_btn().click();
 	  HolmosBaseUtils.sleep(5000);
-	  System.out.println("完成登陆操作");
 	}
 	public void logoutApp(){
-	  
+	//点击导航栏→我的
+		pages.odb_guide_Mine().click();
+		HolmosBaseUtils.sleep(2000);
+		Androidswipe androidswipe = new Androidswipe();
+		//向上滑动200个像素（为了让退出按钮显示出来）
+		androidswipe.swipeToUp(200);
+		HolmosBaseUtils.sleep(2000);
+		//点击退出按钮
+		pages.odb_guide_Mine_Quit().click();
+		HolmosBaseUtils.sleep(2000);
 	}
 }
