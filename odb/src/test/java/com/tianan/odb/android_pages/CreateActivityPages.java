@@ -77,55 +77,76 @@ public class CreateActivityPages {
 	public WebElement odb_GridView_zhoubian(){
 		WebElement GridView_zhoubian=ConfigurationAndroid.driver.findElementByXPath("//android.widget.GridView[@resource-id='com.tian.obd.android:id/gridView']/android.widget.LinearLayout[1]");
 		return GridView_zhoubian;
-	}
-	//周边出行→当前用户位置
+		}
+		//周边出行→当前用户位置
 	public WebElement odb_GridView_zhoubian_driveruser(){
 		WebElement GridView_zhoubian_driveruser=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_drive_user");
 		return  GridView_zhoubian_driveruser;
-	}
-	//周边出行→停车场
+		}
+		//周边出行→停车场
 	public WebElement odb_GridView_zhoubian_park(){
 		WebElement GridView_zhoubian_park=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_handler_park");
 		return GridView_zhoubian_park;
-		
-	}
-	//周边出行→停车场→查看
+			
+		}
+		//周边出行→停车场→查看
 	public WebElement odb_GridView_zhoubian_park_check(){
-		
-		//WebElement GridView_zhoubian_park_check=ConfigurationAndroid.driver.findElementById("//android.widget.Button[resource-d='com.tian.obd.android:id/btn_park_map_detail'][1]");
+			
+			//WebElement GridView_zhoubian_park_check=ConfigurationAndroid.driver.findElementById("//android.widget.Button[resource-d='com.tian.obd.android:id/btn_park_map_detail'][1]");
 		WebElement GridView_zhoubian_park_check=ConfigurationAndroid.driver.findElementByXPath("//android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.Button[1]");
 		return GridView_zhoubian_park_check;
-	}
-	//周边出行→停车场→查看→停车场名称
+		}
+		//周边出行→停车场→查看→停车场名称
 	public WebElement odb_GridView_zhoubian_park_check_name(){
-		
+			
 		WebElement GridView_zhoubian_park_check_name=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_park_name");
-		
+			
 		return GridView_zhoubian_park_check_name;
-		
-	}
-	//周边出行→加油站
+			
+		}
+		//周边出行→加油站
 	public WebElement odb_GridView_zhoubian_gas(){
 		WebElement GridView_zhoubian_gas=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_handler_oil_station");
 		return GridView_zhoubian_gas;
-		
-	}
-	//周边出行→加油站→查看
+			
+		}
+		//周边出行→加油站→查看
 	public WebElement odb_GridView_zhoubian_gas_check(){
 		
-		WebElement GridView_zhoubian_gas_check=ConfigurationAndroid.driver.findElementByXPath("//android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]/android.widget.Button[1]");
+		WebElement GridView_zhoubian_gas_check=ConfigurationAndroid.driver.findElementByXPath("\r\n" + 
+				"//android.widget.ListView/android.widget.RelativeLayout[1]/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.LinearLayout[2]/android.widget.Button[1]");
 		return GridView_zhoubian_gas_check;
-	}
-	//周边出行→停车场→查看→加油站名称
+		}
+		//周边出行→停车场→查看→加油站名称
 	public WebElement odb_GridView_zhoubian_gas_check_name(){
-		
+			
 		WebElement GridView_zhoubian_gas_check_name=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/txv_oil_station");
-		
+			
 		return GridView_zhoubian_gas_check_name;
+			
+		}
+		//周边出行→维修点
+	public WebElement odb_GridView_zhoubian_4s() {
+		    
+		WebElement GridView_zhoubian_4s=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_handler_maintenance_station");
+		return GridView_zhoubian_4s;
+		    
+		}
 		
-	}
+		//周边出行→维修点→查看
+	public WebElement odb_GridView_zhoubian_4s_check() {
+		    
+		WebElement GridView_zhoubian_4s_check=ConfigurationAndroid.driver.findElementByXPath("//android.widget.ListView/android.widget.RelativeLayout/android.widget.RelativeLayout/android.widget.RelativeLayout[2]/android.widget.Button[1]");
+		return GridView_zhoubian_4s_check;
+		}
+		//周边出行→维修点→查看→维修点名称
+	public WebElement odb_GridView_zhoubian_4s_check_name() {
+		    
+	    	WebElement GridView_zhoubian_4s_check_name=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_park_name");
+	    	return GridView_zhoubian_4s_check_name;
+		}
 	public WebElement odb_canale() {
-	  WebElement canle = ConfigurationAndroid.driver.findElement(By.id("com.tian.obd.android:id/sdl__negative_button"));
-	  return canle;
+	    	WebElement canle = ConfigurationAndroid.driver.findElement(By.id("com.tian.obd.android:id/sdl__negative_button"));
+	    	return canle;
 	}
 }
