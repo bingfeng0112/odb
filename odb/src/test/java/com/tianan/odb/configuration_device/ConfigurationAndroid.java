@@ -61,7 +61,6 @@ public class ConfigurationAndroid {
 		} catch (MalformedURLException e) {
 			e.printStackTrace();
 		}
-		System.out.println(driver);
 		logger.info("app启动成功！");
 		// 设置超时
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
