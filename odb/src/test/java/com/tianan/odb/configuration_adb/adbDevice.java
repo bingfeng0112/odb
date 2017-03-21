@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
+import com.holmos.webtest.log.MyLogger;
 public class adbDevice {
+  private static MyLogger logger = MyLogger.getLogger(adbDevice.class);
 	public void AdbDevice() {
 		ShellUtils.cmd("wait-for-device");
 	}
@@ -165,10 +167,10 @@ public class adbDevice {
 	public boolean isInstalled(String packageName) {
 		if (getThirdAppList().contains(packageName)
 				|| getSystemAppList().contains(packageName)) {
-			System.out.println(1);
+			logger.info("app已安装");
 			return true;
 		}
-		System.out.println(2);
+		logger.info("app未安装");
 		return false;
 	}
 	/**
