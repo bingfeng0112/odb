@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 登录页面、升级提示、欢迎动画页面元素定位
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
