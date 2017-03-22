@@ -6,7 +6,7 @@ import com.holmos.webtest.log.MyLogger;
 import com.holmos.webtest.utils.HolmosBaseUtils;
 import com.tianan.odb.android_pages.CreateActivityPages;
 import com.tianan.odb.android_pages.LoginActivityPages;
-import com.tianan.odb.android_pages.MineActivityPages;
+import com.tianan.odb.android_pages.mine.MineActivityPages;
 import com.tianan.odb.android_pages.GuideActivityPages;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 import io.appium.java_client.android.AndroidDriver;
