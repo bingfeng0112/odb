@@ -72,7 +72,130 @@ public class CarinfoActivityPages {
 	WebElement carinfo_tuhu=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_c3_2");
 	return	carinfo_tuhu;
     }
+    //获取周边门店位置
+    public WebElement odb_carinfo_zhoubian() {
+	
+	WebElement carinfo_zhoubian=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_around_mall");
+	return carinfo_zhoubian;
+	
+    }
+    //获取加油站位置
+    public WebElement odb_carinfo_gas() {
+	
+	WebElement carinfo_gas=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_c2_1");
+	return carinfo_gas;
+	
+    }
+    //加油站→发送到我的智能系统
+    public WebElement odb_carinfo_gas_Issued() {
+	
+	WebElement carinfo_gas_Issued=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_poi_paper");
+	return carinfo_gas_Issued;
+	
+    }
+    //加油站→发送到我的智能系统→确定按钮
+    public WebElement odb_carinfo_gas_Issued_yes() {
+	WebElement carinfo_gas_Issued_yes=ConfigurationAndroid.driver.findElementById("android:id/button1");
+	return carinfo_gas_Issued_yes;
+	
+    }
+    //加油站→发送到我的智能系统→验证是否下发成功
+    public WebElement odb_carinfo_gas_Issued_success() {
+	
+	WebElement carinfo_gas_Issued_success=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_result");
+	return carinfo_gas_Issued_success;
+	
+    }
+  //加油站→发送到我的智能系统→验证是否下发成功→确定按钮
+    public WebElement odb_carinfo_gas_Issued_success_submit() {
+	WebElement carinfo_gas_Issued_success_submit=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_poi_conform");
+	return carinfo_gas_Issued_success_submit;
+	
+    }
+  //获取停车场位置
+
+    public WebElement odb_carinfo_park() {
+	WebElement carinfo_park=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_c2_2");
+	return carinfo_park;
+	
+    }
+  //停车场→发送到我的智能系统
+    public WebElement odb_carinfo_park_Issued() {
+	
+	WebElement carinfo_park_Issued=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_poi_paper");
+	return carinfo_park_Issued;
+	
+    }
+    //停车场→发送到我的智能系统→确定按钮
+    public WebElement odb_carinfo_park_Issued_yes() {
+	
+	WebElement carinfo_park_Issued_yes=ConfigurationAndroid.driver.findElementById("android:id/button1");
+	return carinfo_park_Issued_yes;
+    }
+    //停车场→发送到我的智能系统→验证发送成功
+    public WebElement odb_carinfo_park_Issued_success() {
+	
+	WebElement carinfo_park_Issued_success=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_result");
+	return carinfo_park_Issued_success;
+	
+    }
+    //停车场→发送到我的智能系统→验证发送成功→确定按钮
+    public WebElement odb_carinfo_park_Issued_success_submit() {
+	
+	WebElement carinfo_park_Issued_success_submit=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_poi_conform");
+	return carinfo_park_Issued_success_submit;
+	
+    }
+    //获取当月行驶里程位置
+    public WebElement odb_carinfo_Mmileage() {
+	
+	WebElement carinfo_Mmileage=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/ll_c_1");
+	return carinfo_Mmileage;
+	
+    }
+    //获取当月行驶里程位置→本周行驶里程
+    public WebElement odb_carinfo_Mmileage_mileage() {
+	
+	
+	WebElement carinfo_Mmileage_mileage=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rb_3");
+	return carinfo_Mmileage_mileage;
+	
+    }
     
+    //获取当月行驶里程→行驶里程→本周共行驶公里数
+    public WebElement odb_carinfo_Mmileage_mileage_number() {
+	
+	WebElement carinfo_Mmileage_mileage_Column=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/txv_times");
+	return carinfo_Mmileage_mileage_Column;
+	
+    }
+    //获取当月行驶里程→行驶里程→上周行驶里程
+    public WebElement odb_carinfo_Mmileage_mileage_lefttab() {
+	
+	WebElement carinfo_Mmileage_mileage_number_next=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/imv_left_tab");
+	return carinfo_Mmileage_mileage_number_next;
+	
+    }
     
+    //获取当月行驶里程→行驶里程→上周周共行驶公里数
+    public WebElement odb_carinfo_Mmileage_mileage_number_next() {
+	
+	WebElement carinfo_Mmileage_mileage_number_next=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/txv_times");
+	return carinfo_Mmileage_mileage_number_next;
+	
+    }
+  //获取当月行驶里程位置→本周驾乘次数
+    public WebElement odb_carinfo_Mmileage_driver_num() {
+	
+	WebElement carinfo_Mmileage_driver_num=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rb_1");
+	return carinfo_Mmileage_driver_num;
+    }
+  //获取显示手机号码位置
+    public WebElement odb_carinfo_phonenumber() {
+	
+	WebElement carinfo_phonenumber=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/txv_username");
+	return carinfo_phonenumber;
+	
+    }
     
 }
