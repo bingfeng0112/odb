@@ -26,6 +26,8 @@ public class test_Carinfo_souku {
 	TouchActionUtils tau = new TouchActionUtils();
 	HolmosBaseUtils.sleep(2000);
 	//点击车信息
+	tau.tap(page.odb_grid_carinfo());
+	HolmosBaseUtils.sleep(2000);
 	try {
 	    //点击车信息→嗖酷
 	    tau.tap(page.odb_carinfo_kuso());

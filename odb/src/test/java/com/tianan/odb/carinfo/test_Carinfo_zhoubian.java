@@ -12,10 +12,10 @@ import com.tianan.odb.configuration_device.ConfigurationAndroid;
 import com.tianan.odb.public_infunction.TouchActionUtils;
 import com.tianan.odb.public_infunction.login_success;
 
-public class test_Carinfo_tuhu {
-    private static MyLogger logger = MyLogger.getLogger(test_Carinfo_tuhu.class);
+public class test_Carinfo_zhoubian {
+    private static MyLogger logger = MyLogger.getLogger(test_Carinfo_zhoubian.class);
   @Test
-  public void test_Carinfo_tuhu() {
+  public void test_Carinfo_zhoubian() {
 	CarinfoActivityPages page = new CarinfoActivityPages();
 	login_success login = new login_success();
 	ConfigurationAndroid con = new ConfigurationAndroid();
@@ -29,27 +29,28 @@ public class test_Carinfo_tuhu {
 	//点击车信息
 	tau.tap(page.odb_grid_carinfo());
 	HolmosBaseUtils.sleep(2000);
-	//点击车信息→途虎商城
-	tau.tap(page.odb_carinfo_tuhu());
+	//点击车信息→周边门店
+	tau.tap(page.odb_carinfo_zhoubian());
 	HolmosBaseUtils.sleep(10000);
-	//获取途虎商城xml信息
+	//获取周边门店信息的xml
 	String xmls =ConfigurationAndroid.driver.getPageSource();
-	//判断途虎商城是否被正常打开
-	if(xmls.contains("天天秒杀")) {
-	    logger.info("测试通过！");
-	}
-	else {
+	HolmosBaseUtils.sleep(2000);
+	System.out.println(xmls);
+	//校验易车生活是否被正确打开
+	if(xmls.contains("易车生活")) {
+	    logger.info("测试通过");
 	    
-	    logger.error("测试途虎商城功能存在问题，请检查！");
+	}else {
+	    logger.error("测试周边门店功能存在问题，请检查！");
 	    HolmosBaseUtils.sleep(1000);
 	    ConfigurationAndroid.driver.quit();
 	    HolmosBaseUtils.sleep(1000);
 	    throw new NoSuchElementException();
 	}
+	
   }
   @AfterTest
   public void tearDown() throws Exception{
-	
 	ConfigurationAndroid.driver.quit();
 	logger.info("资源释放成功");
 	

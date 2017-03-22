@@ -12,10 +12,10 @@ import com.tianan.odb.configuration_device.ConfigurationAndroid;
 import com.tianan.odb.public_infunction.TouchActionUtils;
 import com.tianan.odb.public_infunction.login_success;
 
-public class test_Carinfo_tuhu {
-    private static MyLogger logger = MyLogger.getLogger(test_Carinfo_tuhu.class);
+public class test_Carinfo_park {
+    private static MyLogger logger = MyLogger.getLogger(test_Carinfo_park.class);
   @Test
-  public void test_Carinfo_tuhu() {
+  public void test_Carinfo_park() {
 	CarinfoActivityPages page = new CarinfoActivityPages();
 	login_success login = new login_success();
 	ConfigurationAndroid con = new ConfigurationAndroid();
@@ -29,18 +29,25 @@ public class test_Carinfo_tuhu {
 	//点击车信息
 	tau.tap(page.odb_grid_carinfo());
 	HolmosBaseUtils.sleep(2000);
-	//点击车信息→途虎商城
-	tau.tap(page.odb_carinfo_tuhu());
-	HolmosBaseUtils.sleep(10000);
-	//获取途虎商城xml信息
-	String xmls =ConfigurationAndroid.driver.getPageSource();
-	//判断途虎商城是否被正常打开
-	if(xmls.contains("天天秒杀")) {
-	    logger.info("测试通过！");
-	}
-	else {
+	//点击车信息→停车场
+	tau.tap(page.odb_carinfo_park());
+	HolmosBaseUtils.sleep(2000);
+	//点击车信息→停车场→点击发送到我的智能车载系统
+	tau.tap(page.odb_carinfo_park_Issued());
+	HolmosBaseUtils.sleep(2000);
+	//点击车信息→停车场→点击发送到我的智能车载系统→确定按钮
+	tau.tap(page.odb_carinfo_park_Issued_yes());
+	HolmosBaseUtils.sleep(2000);
+	//校验是否下发成功
+	if(page.odb_carinfo_park_Issued_success().getText().equals("目的地发送成功!")) {
 	    
-	    logger.error("测试途虎商城功能存在问题，请检查！");
+	    logger.info("测试通过");
+	    //点击确认按钮
+	    tau.tap(page.odb_carinfo_park_Issued_success_submit());
+	    HolmosBaseUtils.sleep(2000);
+	    
+	}else {
+	    logger.error("测试停车场功能存在问题，请检查！");
 	    HolmosBaseUtils.sleep(1000);
 	    ConfigurationAndroid.driver.quit();
 	    HolmosBaseUtils.sleep(1000);
@@ -48,10 +55,8 @@ public class test_Carinfo_tuhu {
 	}
   }
   @AfterTest
-  public void tearDown() throws Exception{
-	
+	public void tearDown() throws Exception{
 	ConfigurationAndroid.driver.quit();
 	logger.info("资源释放成功");
-	
-}
+  }
 }
