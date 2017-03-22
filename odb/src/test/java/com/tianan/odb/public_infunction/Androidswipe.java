@@ -26,7 +26,6 @@ public class Androidswipe {
   /**
    * 向上滑动，从10分之9的位置滑动到10分之一的位置
    * 
-   * @author 张豆豆
    * @param during
    */
   public void swipeToUp(int during) {
@@ -51,7 +50,6 @@ public class Androidswipe {
   /**
    * 向下滑动 9/10
    * 
-   * @author 张豆豆
    * @param during
    *          滑动时间
    */
@@ -77,7 +75,6 @@ public class Androidswipe {
   /**
    * 向左滑动 9/10
    * 
-   * @author 张豆豆
    * @param during
    */
   public void swipeToLeft(int during) {
@@ -102,7 +99,6 @@ public class Androidswipe {
   /**
    * 向右滑动 9/10
    * 
-   * @author 张豆豆
    * @param during
    *          滑动时间
    */
@@ -114,7 +110,6 @@ public class Androidswipe {
   /**
    * 自定义滑动范围， 示例 customSwipe(9, 1, 10, 500)表示从10分之9滑到10分之一的位置
    * 
-   * @author 张豆豆
    * @param x
    *          分子（开始位置）
    * @param y
