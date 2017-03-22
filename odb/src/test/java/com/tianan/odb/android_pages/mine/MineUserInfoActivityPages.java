@@ -1,4 +1,4 @@
-package com.tianan.odb.android_pages;
+package com.tianan.odb.android_pages.mine;
 
 import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
