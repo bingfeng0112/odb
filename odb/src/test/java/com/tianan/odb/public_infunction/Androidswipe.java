@@ -128,8 +128,19 @@ public class Androidswipe {
 	int size[] = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] * x / z, size[1] / 2, size[0] * y / z, size[1] / 2, during);
   }
-
-  public int[] windowSize() {
+  /**
+   * 指定元素向上滑动 , 从元素中央位置滑动到屏幕Y轴200的位置。
+   * @param element 要滑动的元素
+   * @param during 滑动时长
+   */
+  public void elementSwipeToUp(WebElement element, int during){
+	int elementStartY = element.getLocation().getY();
+	int swipeX = element.getSize().getWidth() / 2;
+	int elementHeight = element.getSize().getHeight();
+	int startY = elementStartY + elementHeight / 2;
+	ConfigurationAndroid.driver.swipe(swipeX, startY, swipeX, 200, during);
+  }
+  private int[] windowSize() {
 	int width = ConfigurationAndroid.driver.manage().window().getSize().width;
 	int height = ConfigurationAndroid.driver.manage().window().getSize().height;
 	int size[] = new int[] { width, height };
