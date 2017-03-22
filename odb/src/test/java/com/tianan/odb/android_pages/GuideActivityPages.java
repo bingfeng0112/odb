@@ -4,20 +4,18 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * app导航
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
 public class GuideActivityPages {
   /**
-   * @author 张豆豆
    * @return 标题栏
    */
   public WebElement odbTitleBar() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/title_text");
   }
   /**
-   * 
-   * @author 张豆豆
    * @return 菜单 车信息
    */
   public WebElement odbCarInfo() {
@@ -25,8 +23,6 @@ public class GuideActivityPages {
 	return home;
   }
   /**
-   * 
-   * @author 张豆豆
    * @return 菜单 车服务
    */
   public WebElement odbCarService() {
@@ -34,8 +30,6 @@ public class GuideActivityPages {
 	return analyze;
   }
   /**
-   * 
-   * @author 张豆豆
    * @return 菜单 发现
    */
   public WebElement odbDiscover() {
@@ -43,8 +37,6 @@ public class GuideActivityPages {
 	return discover;
   }
   /**
-   * 
-   * @author 张豆豆
    * @return 菜单 我的
    */
   public WebElement odbMine() {
