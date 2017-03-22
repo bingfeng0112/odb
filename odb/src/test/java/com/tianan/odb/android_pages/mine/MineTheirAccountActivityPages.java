@@ -7,7 +7,7 @@ import com.tianan.odb.configuration_device.ConfigurationAndroid;
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
-public class MineTheirAccount {
+public class MineTheirAccountActivityPages {
   /**
    * 
    * @author 张豆豆
