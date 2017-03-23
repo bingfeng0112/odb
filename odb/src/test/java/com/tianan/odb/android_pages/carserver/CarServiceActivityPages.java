@@ -57,4 +57,18 @@ public class CarServiceActivityPages {
   public WebElement odbCarServiceCarAssess() {
 	return ConfigurationAndroid.driver.findElementByName("车辆估价");
   }
+  /**
+   * 
+   * @return 套餐订购
+   */
+  public WebElement odbCarServicePackageOder(){
+	return ConfigurationAndroid.driver.findElementByName("套餐订购");
+  }
+  /**
+   * 
+   * @return 流量查询
+   */
+  public WebElement odbCarServiceGPRS() {
+	return ConfigurationAndroid.driver.findElementByName("流量查询");
+  }
 }
