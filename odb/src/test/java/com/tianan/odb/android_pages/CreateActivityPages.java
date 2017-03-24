@@ -202,4 +202,85 @@ public class CreateActivityPages {
 		By.id("com.tian.obd.android:id/sdl__negative_button"));
 	return canle;
     }
+    //分享
+    public WebElement odb_share() {
+	WebElement share=ConfigurationAndroid.driver.findElementByXPath("//android.widget.GridView[@resource-id='com.tian.obd.android:id/gridView']/android.widget.LinearLayout[3]");
+	return  share;
+    }
+    //分享→我的的分享
+    public WebElement odb_myShare() {
+	
+	WebElement myShare = ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_my_share");
+	return myShare;
+	
+    }
+    //分享→验证是否获取了地理位置
+    public WebElement odb_share_positionName() {
+	
+	WebElement share_positionName=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_my_share_name");
+	return share_positionName;
+	
+    }
+    //分享→向好友分享你的地理位置按钮
+    public WebElement odb_share_positionShareFriends() {
+	
+	WebElement share_positionShareFriends=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/rl_my_share_detail");
+	return share_positionShareFriends;
+    }
+    //分享→分享发送按钮
+    public WebElement odb_share_shareBtn() {
+	
+	WebElement share_shareBtn=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_my_share");
+	return share_shareBtn;
+	
+    }
+    
+    //分享→分享发送→选择好友手机号码(联系人中的第一个）
+    public WebElement odb_share_shareBtn_FriendsPhoneNum() {
+	
+	WebElement share_shareBtn_FriendsPhoneNum=ConfigurationAndroid.driver.findElementByXPath("//android.widget.ListView/android.view.View[1]/android.view.View[1]");
+	return share_shareBtn_FriendsPhoneNum;
+	
+    }
+    //分享→分享发送→选择好友手机号码→输入分析内容文字
+    public WebElement odb_share_shareBtn_FriendsPhoneNum_ShareTxt() {
+	
+	WebElement share_shareBtn_FriendsPhoneNum_ShareTxt=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/edt_share_content");
+	return share_shareBtn_FriendsPhoneNum_ShareTxt;
+    }
+    //分享→分享发送→选择好友手机号码→输入分析内容文字_发送
+    public WebElement odb_share_shareBtn_FriendsPhoneNum_ShareTxt_Send() {
+	
+	WebElement share_shareBtn_FriendsPhoneNum_ShareTxt_Send=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/right_btn");
+	return share_shareBtn_FriendsPhoneNum_ShareTxt_Send;
+    }
+    //分享→好友的分享
+    public WebElement odb_friendsShare() {
+	
+	WebElement odb_friendsShare = ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/tv_friend_share");
+	return odb_friendsShare;
+	
+    }
+    //获取第一条好友分享消息的位置
+    
+    public WebElement odb_friendsShare_No1news() {
+	
+	WebElement friendsShare_No1news = ConfigurationAndroid.driver.findElementByXPath("//android.widget.ListView[1]/android.widget.RelativeLayout[1]");
+	return friendsShare_No1news;
+	
+    }
+    //获取分享消息导航区域的位置
+    public WebElement odb_friendsShare_No1news_detailed() {
+	
+	WebElement friendsShare_No1news_detailed=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/imb_flag");
+	return friendsShare_No1news_detailed;
+    }
+    //获取好友的分享位置信息文字内容
+    public WebElement odb_friendsShare_No1news_detailed_gettxt() {
+	
+	WebElement friendsShare_No1news_detailed_gettxt=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/txv_share_content");
+	return friendsShare_No1news_detailed_gettxt;
+	
+	
+    }
 }
