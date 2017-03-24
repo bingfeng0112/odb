@@ -31,12 +31,17 @@ public class CarServiceViolationActivityPages {
   public WebElement odbCarServiceViolationProvinceList(String province) {
 	return ConfigurationAndroid.driver.findElementByName(province);
   }
+  public WebElement odbccc(){
+	return ConfigurationAndroid.driver
+		.findElementByXPath("//android.view.View[@content-desc='车牌号码 ']");
+  }
 
   /**
    * 车牌号码省缩写
    */
   public WebElement odbCarServiceViolationProvinec() {
-	return ConfigurationAndroid.driver.findElementByName("粤 Link");
+	return ConfigurationAndroid.driver
+		.findElementByXPath("//android.view.View[@content-desc='车牌号码 ']/following::android.view.View[1] ");
   }
 
   /**
@@ -44,7 +49,7 @@ public class CarServiceViolationActivityPages {
    */
   public WebElement odbCarServiceViolationCarNum() {
 	return ConfigurationAndroid.driver.findElementByXPath(
-		"//android.view.View[@content-desc='粤 Link']/following::android.view.View[1]/android.widget.EditText");
+		"//android.view.View[@content-desc='车牌号码 ']/following::android.view.View[2]/android.widget.EditText");
   }
 
   /**
@@ -52,7 +57,20 @@ public class CarServiceViolationActivityPages {
    */
   public WebElement odbCarServiceViolationVIN() {
 	return ConfigurationAndroid.driver.findElementByXPath(
-		"//android.view.View[@content-desc='粤 Link']/following::android.view.View[3]/android.widget.EditText");
+		"//android.view.View[@content-desc='发动机号 ']/following::android.view.View[1]/android.widget.EditText");
+  }
+  /**
+   * 如何查找VIN
+   */
+  public WebElement odbCarServiceViolationWhereVIN() {
+	return ConfigurationAndroid.driver.findElementByXPath(
+		"//android.view.View[@content-desc='发动机号 ']/following::android.view.View[1]/android.view.View");
+  }
+  /**
+   * VIN所有位置
+   */
+  public WebElement odbCarServiceViolationVINPic() {
+	return ConfigurationAndroid.driver.findElementByName("怎么查找车身架号和发动机尾号？");
   }
 
   /**
@@ -60,7 +78,7 @@ public class CarServiceViolationActivityPages {
    */
   public WebElement odbCarServiceViolationPhoneNum() {
 	return ConfigurationAndroid.driver.findElementByXPath(
-		"//android.view.View[@content-desc='粤 Link']/following::android.view.View[5]/android.widget.EditText");
+		"//android.view.View[@content-desc='手机号码 ']/following::android.view.View[1]/android.widget.EditText");
   }
 
   /**
@@ -83,6 +101,6 @@ public class CarServiceViolationActivityPages {
    * 提交按钮
    */
   public WebElement odbCarServiceViolationSave() {
-	return ConfigurationAndroid.driver.findElementByName("提交 Link");
+	return ConfigurationAndroid.driver.findElementByXPath("//android.view.View[@content-desc='提交']");
   }
 }

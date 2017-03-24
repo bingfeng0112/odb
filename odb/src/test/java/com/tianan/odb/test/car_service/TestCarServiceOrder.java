@@ -17,6 +17,7 @@ import com.tianan.odb.public_infunction.login_success;
 
 /**
  * 检查套餐订购页面所有套餐是否可以被选中，并购买一个套餐
+ * 
  * @author: 张豆豆
  * @create: Mar 23, 2017
  */
@@ -129,12 +130,14 @@ public class TestCarServiceOrder {
 		errOrder = errOrder + "\t" + order.get(index);
 	  }
 	  logger.error(errOrder);
+	  throw new NoSuchElementException(errOrder);
 	}
 	HolmosBaseUtils.sleep(2000);
   }
-  
-  @Test(dependsOnMethods="testCheckOrder")
-  public void testBuyOrder(){
+
+  @Test(dependsOnMethods = "testCheckOrder")
+  public void testBuyOrder() {
+	logger.info("测试购买一个套餐");
 	packageOrder.odbServicePackageOrder100M().click();
 	packageOrder.odbServicePackageOrderBuyNow().click();
 	HolmosBaseUtils.sleep(500);
@@ -143,6 +146,7 @@ public class TestCarServiceOrder {
 	try {
 	  packageOrder.odbTitleBar();
 	  logger.error("未打开支付页面");
+	  throw new NoSuchElementException("未打开支付页面");
 	} catch (NoSuchElementException e) {
 	  logger.info("已打开支付页面");
 	}
