@@ -11,7 +11,10 @@ import com.tianan.odb.android_pages.CarinfoActivityPages;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 import com.tianan.odb.public_infunction.TouchActionUtils;
 import com.tianan.odb.public_infunction.login_success;
-
+/**
+ * @author: 张行
+ * 车机已经和app绑定，车信息模块→周边门店测试用例
+ */
 public class test_Carinfo_zhoubian {
     private static MyLogger logger = MyLogger.getLogger(test_Carinfo_zhoubian.class);
   @Test

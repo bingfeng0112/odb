@@ -1,6 +1,10 @@
 package com.tianan.odb.carinfo;
 
 import java.util.NoSuchElementException;
+/**
+ * @author: 张行
+ * 车机已经和app绑定，车信息模块→停车场测试用例
+ */
 
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Test;
