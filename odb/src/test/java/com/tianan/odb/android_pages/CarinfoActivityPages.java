@@ -198,4 +198,12 @@ public class CarinfoActivityPages {
 	
     }
     
+    //向上滑动手机号后，弹出隐藏页面中的驾驶统计
+    public WebElement odb_carinfo_phonenumber_drivernum() {
+	
+	WebElement carinfo_phonenumber_drivernum=ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/iv_statice_icon");
+	return carinfo_phonenumber_drivernum;
+	
+    }
+    
 }
