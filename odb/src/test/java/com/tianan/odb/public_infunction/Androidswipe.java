@@ -133,10 +133,10 @@ public class Androidswipe {
    *          滑动时长
    */
   public void elementSwipeToUp(WebElement element, int during) {
-	int elementStartY = element.getLocation().getY();
-	int swipeX = element.getSize().getWidth() / 2;
-	int elementHeight = element.getSize().getHeight();
-	int startY = elementStartY + elementHeight / 2;
+	int elementStartY = element.getLocation().getY();//获取当前元素y的像素点
+	int swipeX = element.getSize().getWidth() / 2;   //确定x的像素点，当前元素宽度像素的一半儿
+	int elementHeight = element.getSize().getHeight();//获取当前元素高度
+	int startY = elementStartY + elementHeight / 2;//确定y的像素点，当前元素高度的一半
 	ConfigurationAndroid.driver.swipe(swipeX, startY, swipeX, 200, during);
   }
 
