@@ -31,9 +31,9 @@ public class CarServiceViolationActivityPages {
   public WebElement odbCarServiceViolationProvinceList(String province) {
 	return ConfigurationAndroid.driver.findElementByName(province);
   }
-  public WebElement odbccc(){
-	return ConfigurationAndroid.driver
-		.findElementByXPath("//android.view.View[@content-desc='车牌号码 ']");
+
+  public WebElement odbccc() {
+	return ConfigurationAndroid.driver.findElementByXPath("//android.view.View[@content-desc='车牌号码 ']");
   }
 
   /**
@@ -59,6 +59,7 @@ public class CarServiceViolationActivityPages {
 	return ConfigurationAndroid.driver.findElementByXPath(
 		"//android.view.View[@content-desc='发动机号 ']/following::android.view.View[1]/android.widget.EditText");
   }
+
   /**
    * 如何查找VIN
    */
@@ -66,6 +67,7 @@ public class CarServiceViolationActivityPages {
 	return ConfigurationAndroid.driver.findElementByXPath(
 		"//android.view.View[@content-desc='发动机号 ']/following::android.view.View[1]/android.view.View");
   }
+
   /**
    * VIN所有位置
    */
@@ -102,5 +104,12 @@ public class CarServiceViolationActivityPages {
    */
   public WebElement odbCarServiceViolationSave() {
 	return ConfigurationAndroid.driver.findElementByXPath("//android.view.View[@content-desc='提交']");
+  }
+
+  public WebElement odbCarServiceViolationMenu() {
+	return ConfigurationAndroid.driver.findElementByXPath("//android.view.View[@resource-id='扣分']/following::android.view.View[2]/android.view.View");
+  }
+  public WebElement odbcc() {
+	return ConfigurationAndroid.driver.findElementByXPath("/html/body/div[3]/div[1]/div[2]/div[1]");
   }
 }

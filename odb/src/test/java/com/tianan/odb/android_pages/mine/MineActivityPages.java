@@ -15,6 +15,9 @@ public class MineActivityPages {
   public WebElement odbTitleBar() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/title_text");
   }
+  public WebElement odbMineMyOrder() {
+	return ConfigurationAndroid.driver.findElementByName("我的订单");
+  }
   /**
    * 
    * @author 张豆豆
