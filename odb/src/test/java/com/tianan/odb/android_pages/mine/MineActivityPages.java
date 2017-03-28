@@ -5,6 +5,7 @@ import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
  * 我的页面菜单元素定位
+ * 
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
@@ -15,9 +16,11 @@ public class MineActivityPages {
   public WebElement odbTitleBar() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/title_text");
   }
+
   public WebElement odbMineMyOrder() {
 	return ConfigurationAndroid.driver.findElementByName("我的订单");
   }
+
   /**
    * @return 实名验证
    */

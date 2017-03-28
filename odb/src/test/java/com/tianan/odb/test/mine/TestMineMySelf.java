@@ -7,33 +7,32 @@ import com.holmos.webtest.log.MyLogger;
 import com.holmos.webtest.utils.HolmosBaseUtils;
 import com.tianan.odb.android_pages.GuideActivityPages;
 import com.tianan.odb.android_pages.mine.MineActivityPages;
-import com.tianan.odb.android_pages.mine.MineMyOrderActivityPages;
+import com.tianan.odb.android_pages.mine.MineMessageActivityPages;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 import com.tianan.odb.public_infunction.AndroidElementAttribute;
 import com.tianan.odb.public_infunction.login_success;
 
 /**
- * 我的订单页面测试流程
+ * 个人信息测试
  * 
  * @author 张豆豆
  *
  */
-public class TestMineMyorder {
-  private static MyLogger logger = MyLogger.getLogger(TestMineMyorder.class);
+public class TestMineMySelf {
+  private static MyLogger logger = MyLogger.getLogger(TestMineMessage.class);
   private ConfigurationAndroid con = new ConfigurationAndroid();
   private login_success lSuccess = new login_success();
   private AndroidElementAttribute aea = new AndroidElementAttribute();
   private GuideActivityPages guideActivityPages = new GuideActivityPages();
   private MineActivityPages mine = new MineActivityPages();
-  private MineMyOrderActivityPages order = new MineMyOrderActivityPages();
+  private MineMessageActivityPages message = new MineMessageActivityPages();
 
+  /**
+   * 修改个人信息
+   */
   @Test
-  public void f() {
-	String date = aea.getText(order.date());
-	order.del().click();
-	order.ok().click();
-	String newDate = aea.getText(order.date());
-	logger.info("old date: " + date + "\tnew date: " + newDate);
+  public void testEditMyselfInfo() {
+	
   }
 
   @BeforeClass
@@ -41,9 +40,9 @@ public class TestMineMyorder {
 	con.SetUp();
 	lSuccess.login(3);
 	guideActivityPages.odbMine().click();
-	mine.odbMineMyOrder().click();
-	HolmosBaseUtils.sleep(5000);
-	logger.info("打开我的订单页面");
+	mine.odbMineUserInfo().click();
+	HolmosBaseUtils.sleep(1000);
+	logger.info("打开个人信息页面");
   }
 
   @AfterClass

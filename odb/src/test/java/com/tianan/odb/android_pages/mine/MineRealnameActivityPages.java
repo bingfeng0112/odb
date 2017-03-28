@@ -4,14 +4,14 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 实名认证页面元素定位
+ * 
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
 public class MineRealnameActivityPages {
   /**
    * 标题栏
-   * 
-   * @author 张豆豆
    */
   public WebElement odbMineRealnameTitleBar() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/title_text");
@@ -19,8 +19,6 @@ public class MineRealnameActivityPages {
 
   /**
    * 返回按钮
-   * 
-   * @author 张豆豆
    */
   public WebElement odbMineRealnameBack() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/left_btn");
@@ -28,9 +26,6 @@ public class MineRealnameActivityPages {
 
   /**
    * 请输入您的姓名
-   * 
-   * @author 张豆豆
-   * @return
    */
   public WebElement odbMineRealnameName() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/et_name");
@@ -38,9 +33,6 @@ public class MineRealnameActivityPages {
 
   /**
    * 请输入您的身份证号
-   * 
-   * @author 张豆豆
-   * @return
    */
   public WebElement odbMineRealnameIdnum() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/et_idcard");
@@ -48,9 +40,6 @@ public class MineRealnameActivityPages {
 
   /**
    * 选择身份证
-   * 
-   * @author 张豆豆
-   * @return
    */
   public WebElement odbMineRealnameIdpic() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/img_add_first");
@@ -58,11 +47,23 @@ public class MineRealnameActivityPages {
 
   /**
    * 提交按钮
-   * 
-   * @author 张豆豆
-   * @return
    */
   public WebElement odbMineRealnameSubmitBtn() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_confirm");
+  }
+
+  /**
+   * 小米手机第一张图片
+   */
+  public WebElement odbDIMCPic() {
+	return ConfigurationAndroid.driver
+		.findElementByXPath("//android.widget.ImageView[@resource-id='com.miui.gallery:id/micro_thumb'][1]");
+  }
+
+  /**
+   * 提交成功提示
+   */
+  public WebElement odbMineRealnameOkBtn() {
+	return ConfigurationAndroid.driver.findElementByName("确定");
   }
 }
