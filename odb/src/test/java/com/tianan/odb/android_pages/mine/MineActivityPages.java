@@ -4,12 +4,12 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 我的页面菜单元素定位
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
 public class MineActivityPages {
   /**
-   * @author 张豆豆
    * @return 标题栏
    */
   public WebElement odbTitleBar() {
@@ -19,8 +19,6 @@ public class MineActivityPages {
 	return ConfigurationAndroid.driver.findElementByName("我的订单");
   }
   /**
-   * 
-   * @author 张豆豆
    * @return 实名验证
    */
   public WebElement odbMineRealNameTips() {
@@ -28,8 +26,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 实名验证状态 ｛未认证、已认证｝
    */
   public WebElement odbMineRealNameStatus() {
@@ -37,8 +33,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 设备绑定
    */
   public WebElement odbMineDevicebind() {
@@ -46,8 +40,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 设备绑定状态｛已绑定、未绑定｝
    */
   public WebElement odbMineDeviceBindStatus() {
@@ -55,8 +47,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 设备更换
    */
   public WebElement odbMineDeviceChange() {
@@ -64,8 +54,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 消息提醒
    */
   public WebElement odbMineMessage() {
@@ -73,8 +61,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 轨迹记录
    */
   public WebElement odbMineTracks() {
@@ -82,8 +68,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 轨迹记录状态
    */
   public WebElement odbMineTracksStatus() {
@@ -91,8 +75,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 个人信息
    */
   public WebElement odbMineUserInfo() {
@@ -100,8 +82,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 车辆信息
    */
   public WebElement odbMineCarInfo() {
@@ -109,8 +89,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 第三方账户
    */
   public WebElement odbMineTheirAccount() {
@@ -118,8 +96,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 账户自动登录
    */
   public WebElement odbMineAutoLogin() {
@@ -127,8 +103,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 账户自动登录状态
    */
   public WebElement odbMineAutoLoginStatus() {
@@ -136,8 +110,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 意见反馈
    */
   public WebElement odbMineFeedBack() {
@@ -145,8 +117,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝
    */
   public WebElement odbMineAbout() {
@@ -154,8 +124,6 @@ public class MineActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 导航 我的 —— 退出
    */
   public WebElement odbMineQuitBtn() {
