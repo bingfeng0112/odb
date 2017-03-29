@@ -28,27 +28,34 @@ public class TestCarServiceGPRS {
   private CarServiceGPRSActivityPages gprs = new CarServiceGPRSActivityPages();
   private AndroidElementAttribute aea = new AndroidElementAttribute();
 
-  @Test
+  @Test(priority = 1)
   public void testUsedCheckGPRS() {
 	HolmosBaseUtils.sleep(2000);
 	String use = aea.getContentDESC(gprs.odbCarServiceGPRSUseing());
 	String useNum = use.split(":")[1].split("%")[0];
-	if (Integer.valueOf(useNum) >= 0 && Integer.valueOf(useNum) <= 100) {
+	//if (Integer.valueOf(useNum) >= 0 && Integer.valueOf(useNum) <= 100) {
+	if(Float.parseFloat(useNum) >= 0 && Float.parseFloat(useNum) <= 100){
 	  logger.info("已使用数据数值显示正常");
+	  gprs.odbBack().click();
 	} else {
 	  logger.error("已使用数据数值显示不正确，显示结果为：" + useNum);
+	  gprs.odbBack().click();
 	  throw new NoSuchElementException("已使用数据数值显示不正确，显示结果为：" + useNum);
 	}
   }
 
-  @Test(dependsOnMethods = "testUsedCheckGPRS")
+  @Test(priority = 2)
   public void testBuyGPRS() {
+	carservice.odbCarServiceGPRS().click();
+	HolmosBaseUtils.sleep(2000);
 	gprs.odbCarServiceGPRSBuy().click();
 	String title = aea.getText(gprs.odbTitleBar());
 	if ("套餐订购".equals(title)) {
 	  logger.info("已打开流量套餐页面");
+	  gprs.odbBack().click();
 	} else {
 	  logger.error("未打开流量套餐页面，打开页面为：" + title);
+	  gprs.odbBack().click();
 	  throw new NoSuchElementException("未打开流量套餐页面，打开页面为：" + title);
 	}
   }
