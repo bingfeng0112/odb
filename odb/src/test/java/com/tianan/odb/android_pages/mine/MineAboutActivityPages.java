@@ -4,12 +4,12 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 关于天安车宝 页面元素定位
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
 public class MineAboutActivityPages {
   /**
-   * @author 张豆豆
    * @return 标题栏
    */
   public WebElement odbTitleBar() {
@@ -17,8 +17,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 返回按钮
    */
   public WebElement odbBack() {
@@ -26,8 +24,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助
    */
   public WebElement odbMineAboutHelp() {
@@ -35,8 +31,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理
    */
   public WebElement odbMineAboutHelpUserHelp() {
@@ -44,8 +38,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理文本框
    */
   public WebElement odbMineAboutHelpUserHelpText() {
@@ -54,8 +46,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理 —— 文本内容：客服热线为您提供以下服务
    */
   public WebElement odbMineAboutHelpUserHelpService() {
@@ -63,8 +53,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理 —— 人工导航
    */
   public WebElement odbMineAboutHelpUserHelpConsultation() {
@@ -73,8 +61,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理 —— 意见反馈
    */
   public WebElement odbMineAboutHelpUserHelpFeedback() {
@@ -83,8 +69,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 使用帮助 —— 客服业务受理 —— 客服热线
    */
   public WebElement odbMineAboutHelpUserHelpMoblie() {
@@ -92,8 +76,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 版本标签
    */
   public WebElement odbMineAboutVersionTips() {
@@ -101,8 +83,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 版本号
    */
   public WebElement odbMineAboutVersion() {
@@ -110,7 +90,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * @author 张豆豆
    * @return 取消升级按钮
    */
   public WebElement odbUpdateCanale() {
@@ -119,7 +98,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * @author 张豆豆
    * @return 确认升级按钮
    */
   public WebElement odbUpdateOk() {
@@ -128,7 +106,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * @author 张豆豆
    * @return 升级提示栏内容
    */
   public WebElement odbUpdateMessage() {
@@ -137,7 +114,6 @@ public class MineAboutActivityPages {
   }
 
   /**
-   * @author 张豆豆
    * @return 升级提示框标题
    */
   public WebElement odbUpdateTitleBar() {
@@ -147,7 +123,6 @@ public class MineAboutActivityPages {
 
   /**
    * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 天安车宝介绍
    */
   public WebElement odbMineAboutAppInfo() {
@@ -156,7 +131,6 @@ public class MineAboutActivityPages {
 
   /**
    * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 天安车宝介绍 —— 详细内容文本框
    */
   public WebElement odbMineAboutAppInfoText() {
@@ -166,7 +140,6 @@ public class MineAboutActivityPages {
 
   /**
    * 
-   * @author 张豆豆
    * @return 关于天安车宝 —— 用户协议 。 用户协议内容在webview中，点击打开切换webview模式后获取内容
    */
   public WebElement odbMineAboutUserAgreement() {

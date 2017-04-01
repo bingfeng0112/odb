@@ -33,7 +33,7 @@ public class TestMineRealname {
    */
   @Test
   public void testRealNameAuthentication() {
-	if ("未认证".equals(aea.getText(mine.odbMineRealNameStatus()))) {
+	if (!"已认证".equals(aea.getText(mine.odbMineRealNameStatus()))) {
 	  try {
 		realName.odbMineRealnameIdnum().sendKeys("130682198011024821");
 		realName.odbMineRealnameName().sendKeys("逗豆豆");

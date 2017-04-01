@@ -44,7 +44,7 @@ public class TestCarServiceOrder {
   /**
    * 检查套餐列表中所有套餐是否可以点击
    */
-  @Test
+  @Test(priority = 1)
   public void testCheckOrder() {
 	logger.info("开始检查所有套餐是否能被选中");
 	int i = 0;
@@ -135,7 +135,7 @@ public class TestCarServiceOrder {
 	HolmosBaseUtils.sleep(2000);
   }
 
-  @Test(dependsOnMethods = "testCheckOrder")
+  @Test(priority = 2)
   public void testBuyOrder() {
 	logger.info("测试购买一个套餐");
 	packageOrder.odbServicePackageOrder100M().click();
@@ -146,9 +146,11 @@ public class TestCarServiceOrder {
 	try {
 	  packageOrder.odbTitleBar();
 	  logger.error("未打开支付页面");
+	  packageOrder.odbBack().click();
 	  throw new NoSuchElementException("未打开支付页面");
 	} catch (NoSuchElementException e) {
 	  logger.info("已打开支付页面");
+	  packageOrder.odbBack().click();
 	}
   }
 

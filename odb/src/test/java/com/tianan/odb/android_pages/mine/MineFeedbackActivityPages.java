@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 意见反馈页面元素定位
+ * 
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */

@@ -4,6 +4,8 @@ import org.openqa.selenium.WebElement;
 import com.tianan.odb.configuration_device.ConfigurationAndroid;
 
 /**
+ * 第三方登录页面元素定位
+ * 
  * @author: 张豆豆
  * @create: Mar 20, 2017
  */
@@ -25,6 +27,7 @@ public class MineTheirAccountActivityPages {
   public WebElement odbBack() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/left_btn");
   }
+
   /**
    * 
    * @author 张豆豆

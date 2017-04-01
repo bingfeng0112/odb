@@ -74,9 +74,9 @@ public class MineUserInfoActivityPages {
   /**
    * 
    * @author 张豆豆
-   * @return 修改昵称保存按钮
+   * @return 修改昵称和姓名保存按钮
    */
-  public WebElement odbMineUserInfoNikenameSaveBtn() {
+  public WebElement odbMineUserInfoChangeNameSaveBtn() {
 	return ConfigurationAndroid.driver.findElementById("com.tian.obd.android:id/btn_nickname_save");
   }
 
