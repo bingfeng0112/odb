@@ -27,8 +27,9 @@ public class Androidswipe {
    * 向上滑动，从10分之9的位置滑动到10分之一的位置
    * 
    * @param during
+   *          滑动时间
    */
-  public void swipeToUp(int during) {
+  public static void swipeToUp(int during) {
 	int[] size = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] / 2, size[1] * 9 / 10, size[0] / 2, size[1] / 10, during);
   }
@@ -53,7 +54,7 @@ public class Androidswipe {
    * @param during
    *          滑动时间
    */
-  public void swipeToDown(int during) {
+  public static void swipeToDown(int during) {
 	int[] size = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] / 2, size[1] / 10, size[0] / 2, size[1] * 9 / 10, during);
   }
@@ -76,8 +77,9 @@ public class Androidswipe {
    * 向左滑动 9/10
    * 
    * @param during
+   *          滑动时间
    */
-  public void swipeToLeft(int during) {
+  public static void swipeToLeft(int during) {
 	int[] size = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] * 9 / 10, size[1] / 2, size[0] * 1 / 10, size[1] / 2, during);
   }
@@ -102,7 +104,7 @@ public class Androidswipe {
    * @param during
    *          滑动时间
    */
-  public void swipeToRight(int during) {
+  public static void swipeToRight(int during) {
 	int[] size = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] / 10, size[1] / 2, size[0] * 9 / 10, size[1] / 2, during);
   }
@@ -119,7 +121,7 @@ public class Androidswipe {
    * @param during
    *          滑动时间
    */
-  public void customSwipe(int x, int y, int z, int during) {
+  public static void customSwipe(int x, int y, int z, int during) {
 	int size[] = windowSize();
 	ConfigurationAndroid.driver.swipe(size[0] * x / z, size[1] / 2, size[0] * y / z, size[1] / 2, during);
   }
@@ -132,11 +134,11 @@ public class Androidswipe {
    * @param during
    *          滑动时长
    */
-  public void elementSwipeToUp(WebElement element, int during) {
-	int elementStartY = element.getLocation().getY();//获取当前元素y的像素点
-	int swipeX = element.getSize().getWidth() / 2;   //确定x的像素点，当前元素宽度像素的一半儿
-	int elementHeight = element.getSize().getHeight();//获取当前元素高度
-	int startY = elementStartY + elementHeight / 2;//确定y的像素点，当前元素高度的一半
+  public static void elementSwipeToUp(WebElement element, int during) {
+	int elementStartY = element.getLocation().getY();// 获取当前元素y的像素点
+	int swipeX = element.getSize().getWidth() / 2; // 确定x的像素点，当前元素宽度像素的一半儿
+	int elementHeight = element.getSize().getHeight();// 获取当前元素高度
+	int startY = elementStartY + elementHeight / 2;// 确定y的像素点，当前元素高度的一半
 	ConfigurationAndroid.driver.swipe(swipeX, startY, swipeX, 200, during);
   }
 
@@ -148,7 +150,7 @@ public class Androidswipe {
    * @param during
    *          滑动时长
    */
-  public void elementSwipeToDown(WebElement element, int during) {
+  public static void elementSwipeToDown(WebElement element, int during) {
 	int winHeight = windowSize()[1];
 	int elementStartY = element.getLocation().getY();
 	int swipeX = element.getSize().getWidth() / 2;
@@ -157,7 +159,7 @@ public class Androidswipe {
 	ConfigurationAndroid.driver.swipe(swipeX, startY, swipeX, winHeight - 200, during);
   }
 
-  private int[] windowSize() {
+  private static int[] windowSize() {
 	int width = ConfigurationAndroid.driver.manage().window().getSize().width;
 	int height = ConfigurationAndroid.driver.manage().window().getSize().height;
 	int size[] = new int[] { width, height };
