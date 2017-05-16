@@ -80,7 +80,7 @@ public class login_success {
 	} catch (NoSuchElementException e) {
 	  logger.info("初次安装，开始进行欢迎页滑动");
 	  for (int i = 0; i < num; i++) {
-		androidswipe.customSwipe(9, 1, 10, 1000);
+		Androidswipe.customSwipe(9, 1, 10, 1000);
 		HolmosBaseUtils.sleep(1000);
 	  }
 	  ConfigurationAndroid.driver.tap(1, 500, 500, 500);
@@ -96,7 +96,7 @@ public class login_success {
   public void loginApp() {
 	// 开始登陆系统
 	logger.info("开始登录系统");
-	loginPages.odbLoginUsernametxt().sendKeys("18618192101");
+	loginPages.odbLoginUsernametxt().sendKeys("13888881111");
 	HolmosBaseUtils.sleep(1000);
 	loginPages.odbLoginPasswdtxt().sendKeys("123456");
 	HolmosBaseUtils.sleep(1000);
@@ -119,5 +119,8 @@ public class login_success {
 	// 点击退出按钮
 	mine.odbMineQuitBtn().click();
 	HolmosBaseUtils.sleep(2000);
+  }
+  public void quitAppium() {
+	ConfigurationAndroid.driver.quit();
   }
 }
